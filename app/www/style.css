@@ -1,0 +1,27 @@
+body {
+    background-color: lightblue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#toggle_labels_button{
+    font-size: 0.8rem;
+}
+
+#clear_country_selection_button{
+    font-size: 0.8rem;
+}
+
+#show_info_button{
+    background: none;
+    border: none;
+    filter: invert(89%) sepia(0%) saturate(1%) hue-rotate(167deg) brightness(89%) contrast(85%);
+}
+
+#show_info_button:hover{
+    filter: invert(74%) sepia(31%) saturate(3743%) hue-rotate(190deg) brightness(105%) contrast(108%);
+}
+
+/* Scatterplot points hover - To feedback to user that they are clickable */
+.dot:hover {
+    cursor: pointer;
+}
