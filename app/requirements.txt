@@ -1,0 +1,8 @@
+# Packages listed in this file will be installed by micropip just before the app
+# is started. This means that each time someone visits the app, the packages
+# will be downloaded and installed into the browser's Pyodide environment.
+#
+# Each line must contain either a requirements specification or the URL for a
+# wheel file.
+bqplot
+https://files.pythonhosted.org/packages/f5/17/dedbb86ee03e112d2d2de9111d60de8aea0bbc19503aba8c54faf97b9266/bqplot-0.12.39-py2.py3-none-any.whl
