@@ -30,6 +30,16 @@ async def get_web_data_async(url):
             raise
     else:
         return data_df_cached
+
+def get_local_data(filename):
+    global data_df_cached
+    if data_df_cached is None:
+        infile = Path(__file__).parent / filename
+        df = pd.read_csv(infile)
+        data_df_cached = df.copy()
+        return df
+    else:
+        return data_df_cached
     
 # Impute missing values with median of the entire column metric
 def impute_median(df):
@@ -104,7 +114,8 @@ async def train_and_get_plot(categories = [], num_groups = 3, on_select_callback
     # Asynchronous because may not be successful if http request fails e.g. timeout. 
     # Returns an empty figure if fails to fetch data rather than crashing the app
     try:
-        oecd_df = await get_web_data_async(url)
+        #oecd_df = await get_web_data_async(url)
+        oecd_df = get_local_data("OCED_simplified.csv")
     except Exception as e:
         print(e)
         return plt.figure(figsize=(6, 4), title = "Error getting data from URL")
